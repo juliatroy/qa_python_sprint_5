@@ -1,6 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from constants import Constants
+from constants import Urls
 from locators import Locators
 
 
@@ -26,11 +27,11 @@ class TestExit:
         driver.find_element(*Locators.PERSONAL_AREA).click()
         WebDriverWait(driver, 3).until(
             EC.presence_of_element_located(Locators.HEADER_ACCOUNT_PROFILE))
-        assert driver.current_url == Constants.PROFILE_FORM_URL
+        assert driver.current_url == Urls.PROFILE_FORM_URL
 
         driver.find_element(*Locators.BUTTON_EXIT_ACCOUNT).click()
         WebDriverWait(driver, 3).until(
             EC.presence_of_element_located(Locators.ENTRANCE_HEADER))
-        assert driver.current_url == Constants.LOGIN_FORM_URL
+        assert driver.current_url == Urls.LOGIN_FORM_URL
 
         driver.quit()
