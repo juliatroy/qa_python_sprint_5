@@ -33,5 +33,3 @@ class TestExit:
         WebDriverWait(driver, 3).until(
             EC.presence_of_element_located(Locators.ENTRANCE_HEADER))
         assert driver.current_url == Urls.LOGIN_FORM_URL
-
-        driver.quit()
